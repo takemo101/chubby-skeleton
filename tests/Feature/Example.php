@@ -14,8 +14,10 @@ it('root request', function () {
 it('hello request', function (string $name) {
     /** @var TestCase $this */
 
-    $response = $this->get('/hello/chubby');
+    $response = $this->get("/hello/{$name}");
+
+    $expected = "Hello, {$name}!";
 
     expect($response->getStatusCode())->toBe(StatusCodeInterface::STATUS_OK);
-    expect($response->getBody()->__toString())->toBe('Hello, chubby!');
+    expect($response->getBody()->__toString())->toContain($expected);
 })->with(['chubby', 'takemo101', 'php']);
