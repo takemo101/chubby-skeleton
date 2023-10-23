@@ -1,10 +1,12 @@
 <?php
 
-return Takemo101\Chubby\Application::create(
+$app = Takemo101\Chubby\ApplicationBuilder::buildStandard(
     Takemo101\Chubby\ApplicationOption::from(
         basePath: getenv('APP_BASE_PATH') ?: dirname(__DIR__),
     ),
-)->addProvider(
-    new Takemo101\Chubby\Bootstrap\Provider\HttpProvider(),
-    new Takemo101\Chubby\Bootstrap\Provider\ConsoleProvider(),
 );
+
+// Please add a Provider here to extend the functionality.
+// $app->addProvider(new ExampleProvider());
+
+return $app;

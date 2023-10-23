@@ -4,19 +4,20 @@
 // Here, mainly configure routing and middleware.
 
 use App\NameController;
-use Psr\Http\Message\ResponseInterface;
+use Takemo101\Chubby\Http\Renderer\HtmlRenderer;
 
 $http = http();
 
 $http->get(
     '/',
-    function (ResponseInterface $response) {
-        $response
-            ->getBody()
-            ->write('Welcome to Chubby!');
-
-        return $response;
-    },
+    fn () => new HtmlRenderer(
+        <<<HTML
+            <div>
+                <h1>Hello, World!</h1>
+                <p>This is a sample page.</p>
+            </div>
+        HTML
+    ),
 );
 
 $http->get(
