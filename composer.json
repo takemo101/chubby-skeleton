@@ -24,7 +24,7 @@
   "require": {
     "php": "^8.2",
     "ext-json": "*",
-    "takemo101/chubby": "^0.0.5"
+    "takemo101/chubby": "^0.0.6"
   },
   "require-dev": {
     "laravel/pint": "^1.13",
