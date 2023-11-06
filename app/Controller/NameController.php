@@ -23,7 +23,7 @@ readonly class NameController
      * Hello to you
      *
      * @param string $name
-     * @return string
+     * @return HtmlRenderer
      */
     public function hello(string $name): HtmlRenderer
     {

@@ -15,8 +15,8 @@ readonly class AssetAction
      * constructor
      *
      * @param LocalFilesystem $filesystem
+     * @param PathHelper $pathHelper
      * @param string $assetDirectory
-     * @param string $assetPath
      */
     public function __construct(
         private LocalFilesystem $filesystem,
