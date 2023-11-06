@@ -4,7 +4,8 @@
 /phpunit.xml
 /vendor/
 /docker/
-/docker-compose.yaml
+/docker-compose.yml
+/Taskfile.yml
 /
 
 /storage/logs/*.log
