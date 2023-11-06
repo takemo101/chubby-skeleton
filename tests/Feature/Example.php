@@ -21,3 +21,14 @@ it('hello request', function (string $name) {
     expect($response->getStatusCode())->toBe(StatusCodeInterface::STATUS_OK);
     expect($response->getBody()->__toString())->toContain($expected);
 })->with(['chubby', 'takemo101', 'php']);
+
+it('asset request', function (string $path, string $expectedContentType) {
+    /** @var TestCase $this */
+
+    $response = $this->get("/assets/{$path}");
+
+    expect($response->getStatusCode())->toBe(StatusCodeInterface::STATUS_OK);
+    expect($response->getHeaderLine('Content-Type'))->toBe($expectedContentType);
+})->with([
+    ['example.jpeg', 'image/jpeg'],
+]);
