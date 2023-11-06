@@ -19,6 +19,11 @@ tasks:
     cmds:
       - docker-compose run --rm composer {{default "--version" .CLI_ARGS}}
 
+  pkg-update:
+    cmds:
+      - docker-compose run --rm composer remove takemo101/chubby
+      - docker-compose run --rm composer require takemo101/chubby
+
   start:
     cmds:
       - docker-compose up -d chubby-app
