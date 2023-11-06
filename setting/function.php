@@ -3,24 +3,32 @@
 // Executed after DI container dependency settings are completed.
 // Here, mainly configure routing and middleware.
 
-use App\NameController;
+use App\Action\AssetAction;
+use App\Controller\NameController;
+use Slim\Interfaces\RouteParserInterface;
 use Takemo101\Chubby\Http\Renderer\HtmlRenderer;
 
 $http = http();
 
 $http->get(
     '/',
-    fn () => new HtmlRenderer(
+    fn (RouteParserInterface $route) => new HtmlRenderer(
         <<<HTML
             <div>
                 <h1>Hello, World!</h1>
                 <p>This is a sample page.</p>
+                <img src="{$route->urlFor('asset', ['path' => 'example.jpeg'])}"/>
             </div>
         HTML
     ),
-);
+)->setName('home');
 
 $http->get(
     '/hello/{name}',
     [NameController::class, 'hello'],
-);
+)->setName('hello');
+
+$http->get(
+    '/assets/{path:.*}',
+    AssetAction::class,
+)->setName('asset');

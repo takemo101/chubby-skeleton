@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Controller;
 
 use DI\Attribute\Inject;
 use Takemo101\Chubby\Http\Renderer\HtmlRenderer;
 
-class NameController
+readonly class NameController
 {
     /**
      * constructor
