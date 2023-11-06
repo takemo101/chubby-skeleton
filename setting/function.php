@@ -5,8 +5,16 @@
 
 use App\Action\AssetAction;
 use App\Controller\NameController;
+use App\Error\ErrorPageRender;
 use Slim\Interfaces\RouteParserInterface;
+use Takemo101\Chubby\Http\ErrorHandler\ErrorHandler;
 use Takemo101\Chubby\Http\Renderer\HtmlRenderer;
+
+hook()->onByType(
+    fn (ErrorHandler $handler) => $handler->addRender(
+        new ErrorPageRender(),
+    ),
+);
 
 $http = http();
 
