@@ -6,13 +6,13 @@
 use App\Action\AssetAction;
 use App\Controller\NameController;
 use App\Error\ErrorPageRender;
-use Takemo101\Chubby\Http\ErrorHandler\ErrorHandler;
+use Takemo101\Chubby\Http\ErrorHandler\ErrorResponseRenders;
 use Takemo101\Chubby\Http\Renderer\HtmlRenderer;
 
 $hook = hook();
 
 $hook->onByType(
-    fn (ErrorHandler $handler) => $handler->addRender(
+    fn (ErrorResponseRenders $renders) => $renders->addRender(
         new ErrorPageRender(),
     ),
 );
