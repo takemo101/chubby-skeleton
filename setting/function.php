@@ -6,15 +6,24 @@
 use App\Action\AssetAction;
 use App\Controller\NameController;
 use App\Error\ErrorPageRender;
+use Psr\Container\ContainerInterface;
 use Takemo101\Chubby\Http\ErrorHandler\ErrorResponseRenders;
 use Takemo101\Chubby\Http\Renderer\HtmlRenderer;
+use Takemo101\Chubby\Support\ApplicationSummary;
 
 $hook = hook();
 
 $hook->onByType(
-    fn (ErrorResponseRenders $renders) => $renders->addRender(
-        new ErrorPageRender(),
-    ),
+    function (ErrorResponseRenders $renders, ContainerInterface $container) {
+        /** @var ApplicationSummary */
+        $summary = $container->get(ApplicationSummary::class);
+
+        if ($summary->isDebugMode()) {
+            $renders->addRender(
+                new ErrorPageRender(),
+            );
+        }
+    },
 );
 
 $http = http();
