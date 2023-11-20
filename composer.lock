@@ -2549,12 +2549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/takemo101/chubby.git",
-                "reference": "c51e32d7313eeefe865b1c2de297b95823eda6a8"
+                "reference": "5b57736259d1cdfd708afac2b28b55045ffad9e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/takemo101/chubby/zipball/c51e32d7313eeefe865b1c2de297b95823eda6a8",
-                "reference": "c51e32d7313eeefe865b1c2de297b95823eda6a8",
+                "url": "https://api.github.com/repos/takemo101/chubby/zipball/5b57736259d1cdfd708afac2b28b55045ffad9e4",
+                "reference": "5b57736259d1cdfd708afac2b28b55045ffad9e4",
                 "shasum": ""
             },
             "require": {
@@ -2607,7 +2607,7 @@
                 "issues": "https://github.com/takemo101/chubby/issues",
                 "source": "https://github.com/takemo101/chubby/tree/v0.0.12"
             },
-            "time": "2023-11-20T07:35:22+00:00"
+            "time": "2023-11-20T07:57:23+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
