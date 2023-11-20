@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "344b8f1043f1bf08213d9cd96dcefa6f",
+    "content-hash": "5eed96aeafb8dc2602dfa6e480bfc52c",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -2545,16 +2545,16 @@
         },
         {
             "name": "takemo101/chubby",
-            "version": "v0.0.12",
+            "version": "v0.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/takemo101/chubby.git",
-                "reference": "5b57736259d1cdfd708afac2b28b55045ffad9e4"
+                "reference": "913ef434c36452275eb5ed928a7865a0e135408e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/takemo101/chubby/zipball/5b57736259d1cdfd708afac2b28b55045ffad9e4",
-                "reference": "5b57736259d1cdfd708afac2b28b55045ffad9e4",
+                "url": "https://api.github.com/repos/takemo101/chubby/zipball/913ef434c36452275eb5ed928a7865a0e135408e",
+                "reference": "913ef434c36452275eb5ed928a7865a0e135408e",
                 "shasum": ""
             },
             "require": {
@@ -2605,9 +2605,9 @@
             ],
             "support": {
                 "issues": "https://github.com/takemo101/chubby/issues",
-                "source": "https://github.com/takemo101/chubby/tree/v0.0.12"
+                "source": "https://github.com/takemo101/chubby/tree/v0.0.13"
             },
-            "time": "2023-11-20T07:57:23+00:00"
+            "time": "2023-11-20T09:54:20+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
