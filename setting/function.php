@@ -13,7 +13,7 @@ use Takemo101\Chubby\Support\ApplicationSummary;
 
 $hook = hook();
 
-$hook->onByType(
+$hook->onTyped(
     function (ErrorResponseRenders $renders, ContainerInterface $container) {
         /** @var ApplicationSummary */
         $summary = $container->get(ApplicationSummary::class);
