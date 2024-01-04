@@ -1,7 +1,6 @@
 <?php
 
-use Takemo101\Chubby\Bootstrap\Provider\ClosureProvider;
-use Takemo101\Chubby\Support\ApplicationPath;
+use App\AppProvider;
 use Takemo101\Chubby\ApplicationBuilder;
 use Takemo101\Chubby\ApplicationOption;
 
@@ -15,9 +14,7 @@ $app = ApplicationBuilder::buildStandard(
 // $app->addProvider(new ExampleProvider());
 
 $app->addProvider(
-    new ClosureProvider(
-        boot: fn (ApplicationPath $path) => require $path->getSettingPath('helper.php'),
-    ),
+    AppProvider::class,
 );
 
 return $app;
