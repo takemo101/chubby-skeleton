@@ -9,6 +9,7 @@ use App\Error\ErrorPageRender;
 use Psr\Container\ContainerInterface;
 use Takemo101\Chubby\Http\ErrorHandler\ErrorResponseRenders;
 use Takemo101\Chubby\Http\Renderer\HtmlRenderer;
+use Takemo101\Chubby\Http\Uri\ApplicationUri;
 use Takemo101\Chubby\Support\ApplicationSummary;
 
 $hook = hook();
@@ -30,7 +31,7 @@ $http = http();
 
 $http->get(
     '/',
-    function () {
+    function (ApplicationUri $uri) {
 
         $imgSrc = route('asset', ['path' => 'example.jpeg']);
 
@@ -39,6 +40,7 @@ $http->get(
                 <div>
                     <h1>Hello, World!</h1>
                     <p>This is a sample page.</p>
+                    <p>{$uri}</p>
                     <img src="{$imgSrc}"/>
                 </div>
             HTML
