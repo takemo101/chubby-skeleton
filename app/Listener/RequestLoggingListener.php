@@ -3,7 +3,7 @@
 namespace App\Listener;
 
 use Psr\Log\LoggerInterface;
-use Takemo101\Chubby\Http\Bridge\BeforeControllerInvoke;
+use Takemo101\Chubby\Http\Event\RequestReceived;
 use Takemo101\Chubby\Support\ApplicationSummary;
 
 class RequestLoggingListener
@@ -22,9 +22,9 @@ class RequestLoggingListener
     }
 
     /**
-     * @param BeforeControllerInvoke $event
+     * @param RequestReceived $event
      */
-    public function __invoke(BeforeControllerInvoke $event): void
+    public function __invoke(RequestReceived $event): void
     {
         $request = $event->getRequest();
 
